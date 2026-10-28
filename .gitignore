@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+venv/
+env/
+.venv/
+.env
+
+# Node.js
+node_modules/
+npm-debug.log*
+
+# Jenkins secrets and local credentials
+credentials
+*.pem
+*.key
+
+# IDE and operating system
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini

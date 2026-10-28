@@ -9,14 +9,15 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                echo 'Source code checked out from GitHub.'
+                echo 'Express source code checked out from GitHub.'
             }
         }
 
-        stage('Check Node.js and npm') {
+        stage('Check Node and npm') {
             steps {
                 sh 'node --version'
                 sh 'npm --version'
+                sh 'git --version'
             }
         }
 
@@ -27,6 +28,12 @@ pipeline {
         }
 
         stage('Validate JavaScript') {
+            steps {
+                sh 'node --check server.js'
+            }
+        }
+
+        stage('Run Tests') {
             steps {
                 sh 'npm test'
             }
